@@ -7,7 +7,10 @@ Mantente actualizado a través de nuestro canal oficial:
 ---
 
 <p align="center">
-  <img src='https://cdn.dix.lat/me/f97e746b-46cc-4a00-a896-e2a9d26f30bd.jpg' width="100%" />
+  
+  
+    <img src="https://cdn.dix.lat/me/xczawu-c91x-ppumit-d47b22.svg" alt="SQL" />
+  </a>
 </p>
 
 <h1 align="center">
