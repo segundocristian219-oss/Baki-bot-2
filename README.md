@@ -7,8 +7,6 @@ Mantente actualizado a través de nuestro canal oficial:
 ---
 
 <p align="center">
-  
-  
     <img src="https://cdn.dix.lat/me/xczawu-c91x-ppumit-d47b22.svg" alt="SQL" />
   </a>
 </p>
