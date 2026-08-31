@@ -57,7 +57,7 @@ export const hidetagCommand = {
                             }, { quoted: null });
                         } else {
                             const opciones = {
-                                footer: 'kirito-Bot-MD',
+                                footer: 'BAKI BOT',
                                 mentions
                             };
                             await conn.sendButtonMessage(m.chat, tagText, botones, opciones).catch(() => null);
