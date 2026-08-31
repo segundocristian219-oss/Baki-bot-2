@@ -15,11 +15,14 @@ export const instagramDownloadModule = {
                 try {
                     if (m.react) await m.react("⏳")
 
-                    const res = await fetch(`https://voker.vercel.app/api/instagram?url=${encodeURIComponent(args[0])}`)
+                    const res = await fetch(`https://dix.lat/v1/instagram?url=${encodeURIComponent(args[0])}`)
                     const json = await res.json()
 
-                    
-                    const video = json.data[0].url
+                    if (!json.success || !json.data || !Array.isArray(json.data.data) || json.data.data.length === 0) {
+                        throw new Error("No data found")
+                    }
+
+                    const video = json.data.data[0].url
 
                     if (!video) throw new Error("No video found")
 
