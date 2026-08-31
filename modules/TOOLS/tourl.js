@@ -42,7 +42,7 @@ export const uploadCommand = {
                         let txt = `*── 「 DIX.LAT CDN 」 ──*\n\n`;
                         txt += `▢ *ID:* ${result.public_id}\n`;
                         txt += `▢ *URL:* ${result.url}\n\n`;
-                        txt += `> *Powered by dix.lat - Deylin.`;
+                        txt += `> *Powered by dix.lat - hrz.`;
 
                         await conn.sendMessage(m.chat, { text: txt }, { quoted: m });
                         await m.react('✅');
