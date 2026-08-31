@@ -17,7 +17,7 @@ export const dfail = async (type, m, conn) => {
             url: global.surl(conn),
             thumbnail: img(conn),
             title: name(conn),
-            body: `CREADOR: Deylin Eliac`,
+            body: `CREADOR: hrz`,
             quoted: m,
             contextInfo: {
                 ...channelInfo
