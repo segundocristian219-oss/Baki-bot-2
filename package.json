@@ -14,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/eliac-d/kirito-Bot.git"
   },
-  "author": "Powered by Deylin Elíac",
+  "author": "Powered by hrz ",
   "license": "MIT",
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
