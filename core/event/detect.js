@@ -52,12 +52,12 @@ export async function observeEvents(conn) {
                         }
 
                         const botonesWelcome = [
-                            { text: 'HOLA SIGUE NUESTRO CANAL', url: 'https://whatsapp.com/channel/0029VbC195k9xVJWUtGQ2m29' }, { text: 'VER MENÚ', id: '.menu' }
+                            { text: 'HOLA SIGUE NUESTRO CANAL', url: 'https://whatsapp.com/channel/0029VbDzfII05MUdlK38LK1z' }, { text: 'VER MENÚ', id: '.menu' }
                         ];
 
                         const opcionesWelcome = {
                             title: groupName,
-                            footer: 'Desarrollador • Deylin Eliac ',
+                            footer: 'Desarrollador • hrz ',
                             image: typeof defaultImage === 'string' && defaultImage.startsWith('http') ? { url: defaultImage } : (Buffer.isBuffer(defaultImage) ? defaultImage : { url: defaultImage }),
                             mentions: [userJid]
                         };
