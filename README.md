@@ -1,10 +1,10 @@
 > [!IMPORTANT]
 > **Este proyecto fue descontinuado el 30 de agosto de 2026.**  
-> Agradecemos enormemente el alto reconocimiento recibido durante su ciclo de vida. El proyecto inició el 12 de diciembre de 2023 y, a lo largo de este tiempo, fue desarrollado y mantenido por **[Deylin Eliac](https://wa.me/50432955554)**, quien ha decidido concluirlo para enfocarse en otras áreas de la programación.
+> Agradecemos enormemente el alto reconocimiento recibido durante su ciclo de vida. El proyecto inició el 12 de diciembre de 2023 y, a lo largo de este tiempo, fue desarrollado y mantenido por **[Deylin hrz](https://wa.me/5212213479743)**, quien ha decidido concluirlo para enfocarse en otras áreas de la programación.
 > 
 > Estoy profundamente agradecido con toda la comunidad por el apoyo constante brindado al proyecto.  
 > 
-> **Nota técnica:** El proyecto aún puede ser ejecutado de forma local en Termux o en un Servidor Virtual Privado (VPS). Para cualquier consulta técnica, puedes contactar a [Deylin](https://wa.me/50432955554).
+> **Nota técnica:** El proyecto aún puede ser ejecutado de forma local en Termux o en un Servidor Virtual Privado (VPS). Para cualquier consulta técnica, puedes contactar a [hrz](https://wa.me/5212213479743).
 
 ---
 
