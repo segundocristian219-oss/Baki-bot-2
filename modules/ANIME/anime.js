@@ -1,0 +1,80 @@
+import fetch from 'node-fetch'
+
+export const animeCommand = {
+    category: 'fun',
+    commands: {
+        anime: {
+            name: 'anime',
+            alias: ['animes'],
+            run: async (m, { conn }) => {
+                const sendAlbumMessage = async (conn, jid, medias, options = {}) => {
+                    if (typeof jid !== "string") throw new TypeError("jid must be string")
+                    const caption = options.text || options.caption || ""
+                    const delayTime = !isNaN(options.delay) ? options.delay : 500
+
+                    
+                    const album = conn.generateWAMessageFromContent(
+                        jid,
+                        {
+                            messageContextInfo: {},
+                            albumMessage: {
+                                expectedImageCount: medias.filter(m => m.type === "image").length,
+                                expectedVideoCount: medias.filter(m => m.type === "video").length,
+                                ...(options.quoted ? {
+                                    contextInfo: {
+                                        remoteJid: options.quoted.key.remoteJid,
+                                        fromMe: options.quoted.key.fromMe,
+                                        stanzaId: options.quoted.key.id,
+                                        participant: options.quoted.key.participant || options.quoted.key.remoteJid,
+                                        quotedMessage: options.quoted.message,
+                                    },
+                                } : {}),
+                            },
+                        },
+                        {}
+                    )
+
+                    await conn.relayMessage(album.key.remoteJid, album.message, { messageId: album.key.id })
+
+                    for (let i = 0; i < medias.length; i++) {
+                        const { type, data } = medias[i]
+                        try {
+                            const img = await conn.generateWAMessage(
+                                album.key.remoteJid,
+                                { [type]: data, ...(i === 0 ? { caption } : {}) },
+                                { upload: conn.waUploadToServer }
+                            )
+                            img.message.messageContextInfo = { messageAssociation: { associationType: 1, parentMessageKey: album.key } }
+                            await conn.relayMessage(img.key.remoteJid, img.message, { messageId: img.key.id })
+                            await conn.delay(delayTime)
+                        } catch (err) {
+                            continue
+                        }
+                    }
+                    return album
+                }
+
+                try {
+                    const res = await fetch(`${url_api}/api/search/anime?apikey=400klob`)
+                    const json = await res.json()
+
+                    if (!json.status || !json.images || !Array.isArray(json.images)) throw new Error()
+
+                    const maxImgs = Math.min(json.images.length, 10)
+                    const medias = json.images.slice(0, maxImgs).map(url => ({
+                        type: 'image',
+                        data: { url }
+                    }))
+
+                    await sendAlbumMessage(conn, m.chat, medias, {
+                        caption: `> *ᰔᩚ Aquí tienes ${maxImgs} imágenes anime ✰`,
+                        quoted: m
+                    })
+
+                } catch (e) {
+                    conn.reply(m.chat, '😿 Ocurrió un error al obtener las imágenes anime.', m)
+                }
+            }
+        }
+    }
+};
