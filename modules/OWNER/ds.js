@@ -55,7 +55,7 @@ export const cleanSessionModule = {
                     if (filesDeleted === 0) {
                         await m.reply('> *Sistema optimizado.*');
                     } else {
-                        await m.reply(`> ♛  *PURGA TOTAL FINALIZADA*\n\n✦  *Archivos:* ${filesDeleted}\n✧  *Alcance:* Principal + SubBots\n\n*DEYLIN ELÍAC - SYSTEM*`);
+                        await m.reply(`> ♛  *PURGA TOTAL FINALIZADA*\n\n✦  *Archivos:* ${filesDeleted}\n✧  *Alcance:* Principal + SubBots\n\n*hrz - SYSTEM*`);
                     }
                     await m.react('✅');
                 } catch {
