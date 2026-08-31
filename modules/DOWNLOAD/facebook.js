@@ -15,16 +15,15 @@ export const facebookDownloadModule = {
                 try {
                     if (m.react) await m.react("⏳")
 
-                    const response = await fetch(`https://voker.vercel.app/api/facebook?url=${encodeURIComponent(args[0])}`)
+                    const response = await fetch(`https://dix.lat/v1/facebook?url=${encodeURIComponent(args[0])}`)
 
                     const json = await response.json()
 
-                    if (!json.data || !Array.isArray(json.data) || json.data.length === 0) {
+                    if (!json.success || !json.data || !Array.isArray(json.data.data) || json.data.data.length === 0) {
                         throw new Error("No data found")
                     }
 
-                    
-                    const directMedia = json.data.find(item => !item.shouldRender && item.url)
+                    const directMedia = json.data.data.find(item => !item.shouldRender && item.url)
 
                     if (!directMedia) {
                         throw new Error("No direct download link available")
@@ -40,7 +39,7 @@ export const facebookDownloadModule = {
                             'user-agent': 'TelegramBot (like TwitterBot)'
                         }
                     })
-                    
+
                     const videoBuffer = Buffer.from(await videoRes.arrayBuffer())
                     const sizeMB = videoBuffer.length / (1024 * 1024)
 
